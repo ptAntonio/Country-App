@@ -1,8 +1,13 @@
 <!-- search-input -->
+<!-- <country-search-input />  -->
 <!-- <country-search-input placeholder="Buscar por capital de mi pais" /> -->
 <!-- <country-search-input placeholder="Buscar por capital" /> -->
-<country-search-input />
+<country-search-input placeholder="Buscar por capital" (value)="query.set($event)" />
 
 <!-- country-list -->
 
-<country-list/>
+<!-- @if (isError()) {
+<h3>{{ isError() }}</h3>
+}@else{
+<country-list [countries]="countries()" />
+} -->
