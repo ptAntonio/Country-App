@@ -7,7 +7,7 @@
         <th>Bandera</th>
         <th>Nombre</th>
         <th>Capital</th>
-        <th class="text-right">Poblacion</th>
+        <th class="text-right">Población</th>
         <th></th>
       </tr>
     </thead>
@@ -27,9 +27,35 @@
             {{ country.population | number }}
           </span>
         </td>
-        <td class="text-left"><a class="link-primary">Más info</a></td>
+        <td class="text-left">
+          <a [routerLink]="['/country/by', country.cca2]" class="link-primary">Más info</a>
+        </td>
       </tr>
 
+      }
+      <!--  -->
+      @if(errorMessage()){
+      <tr>
+        <td colspan="8" class="text-center">
+          {{ errorMessage() }}
+        </td>
+      </tr>
+      }
+
+      <!--  -->
+      @if(countries.length === 0 && !isLoading() ){
+      <tr>
+        <td colspan="8" class="text-center">No se encontraron resultados</td>
+      </tr>
+      }
+      
+      <!--  -->
+      @if(isLoading()){
+      <tr>
+        <td colspan="8" class="text-center">
+          Buscando países <span class="loading loading-spinner text-primary"></span>
+        </td>
+      </tr>
       }
     </tbody>
   </table>

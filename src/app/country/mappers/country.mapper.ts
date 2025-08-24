@@ -12,8 +12,10 @@ export class CountryMapper {
       flag: restCountry.flag,
       flagSvg: restCountry.flags.svg,
       // name: restCountry.name.common,
-      name: restCountry.translations['spa'].common ?? 'No spanish name',
-      population: restCountry.population
+      name: restCountry.translations['spa'].common ?? 'No Spanish name',
+      population: restCountry.population,
+      region: restCountry.region,
+      subRegion: restCountry.subregion,
     };
   }
 
@@ -21,9 +23,7 @@ export class CountryMapper {
   // static RESTCountry[] => Country[]
   static mapRestCountryArrayToCountryArray(
     restCountries: RESTCountry[]): Country[] {
-
     return restCountries.map(this.mapRestCountryToCountry);
-
   }
 
 }

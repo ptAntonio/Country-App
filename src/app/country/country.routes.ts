@@ -4,6 +4,7 @@ import { CountryLayoutComponent } from './layouts/CountryLayout/CountryLayout.co
 import { Component } from '@angular/core';
 import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.component';
 import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
+import { CountryPageComponent } from './pages/country-page/country-page.component';
 
 export const countryRoutes: Routes = [
   {
@@ -25,7 +26,7 @@ export const countryRoutes: Routes = [
 
       {
         path: 'by/:code',
-        component: ByCountryPageComponent,
+        component: CountryPageComponent,
       },
 
       {
