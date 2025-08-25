@@ -2,10 +2,14 @@
 <!-- <country-search-input />  -->
 <!-- <country-search-input placeholder="Buscar por capital de mi país" /> -->
 <!-- <country-search-input placeholder="Buscar por capital" /> -->
-<country-search-input placeholder="Buscar por capital" (value)="query.set($event)" />
+<country-search-input
+  placeholder="Buscar por capital"
+  (value)="query.set($event)"
+  [debounceTime]="500"
+  [initialValue]="query()"
+/>
 
 <!-- country-list -->
-
 <country-list
   [countries]="countryResource.value() ?? []"
   [errorMessage]="countryResource.error()"
